@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberSafe</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🛡️ CyberSafe
+    </div>
+
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('password')">Password</button>
+        <button onclick="showPage('phishing')">Phishing</button>
+        <button onclick="showPage('malware')">Malware</button>
+        <button onclick="showPage('quiz')">Quiz</button>
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- HOME -->
+
+    <section id="home" class="page active">
+
+        <div class="hero">
+
+            <div>
+                <span class="badge">CYBER SECURITY AWARENESS</span>
+
+                <h1>
+                    Stay Safe.<br>
+                    <span>Stay Smart.</span>
+                </h1>
+
+                <p>
+                    Learn simple cybersecurity habits and protect
+                    your accounts, devices and personal information.
+                </p>
+
+                <button class="main-btn"
+                        onclick="showPage('password')">
+                    Start Learning →
+                </button>
+            </div>
+
+            <div class="shield">
+                🛡️
+                <small>Think Before You Click</small>
+            </div>
+
+        </div>
+
+
+        <h2 class="title">Cyber Security Basics</h2>
+
+        <div class="cards">
+
+            <div class="card" onclick="showPage('password')">
+                <div class="icon">🔐</div>
+                <h3>Password Safety</h3>
+                <p>Learn how to create strong passwords.</p>
+            </div>
+
+            <div class="card" onclick="showPage('phishing')">
+                <div class="icon">🎣</div>
+                <h3>Phishing</h3>
+                <p>Learn how to identify suspicious messages.</p>
+            </div>
+
+            <div class="card" onclick="showPage('malware')">
+                <div class="icon">🦠</div>
+                <h3>Malware</h3>
+                <p>Understand common types of malware.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>Safe Browsing</h3>
+                <p>Follow safer habits while browsing online.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PASSWORD -->
+
+    <section id="password" class="page">
+
+        <div class="page-header">
+            <div class="big-icon">🔐</div>
+
+            <h1>Password Safety</h1>
+
+            <p>
+                Create strong and unique passwords to protect your accounts.
+            </p>
+        </div>
+
+
+        <div class="content-box">
+
+            <h2>What Makes a Strong Password?</h2>
+
+            <ul>
+                <li>Use a long password or passphrase.</li>
+                <li>Use different passwords for different accounts.</li>
+                <li>Include letters, numbers and symbols.</li>
+                <li>Avoid easily guessed personal information.</li>
+                <li>Enable two-factor authentication when available.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="content-box">
+
+            <h2>Password Strength Checker</h2>
+
+            <p class="warning">
+                ⚠️ Use a sample password. Do not enter your real password.
+            </p>
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter sample password"
+                oninput="checkPassword()"
+            >
+
+            <div class="strength">
+                <div id="strengthBar"></div>
+            </div>
+
+            <h3 id="strengthText">
+                Enter a password
+            </h3>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHISHING -->
+
+    <section id="phishing" class="page">
+
+        <div class="page-header">
+
+            <div class="big-icon">🎣</div>
+
+            <h1>Phishing Awareness</h1>
+
+            <p>
+                Learn how to recognize suspicious emails, messages and links.
+            </p>
+
+        </div>
+
+
+        <div class="content-box">
+
+            <h2>What is Phishing?</h2>
+
+            <p>
+                Phishing is an online scam where someone tries to trick
+                you into revealing sensitive information or taking an
+                unsafe action.
+            </p>
+
+        </div>
+
+
+        <h2 class="title">Common Warning Signs</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">👤</div>
+                <h3>Unknown Sender</h3>
+                <p>
+                    Be careful with unexpected messages from unknown senders.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔗</div>
+                <h3>Suspicious Links</h3>
+                <p>
+                    Check links carefully before opening them.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⏰</div>
+                <h3>Urgent Messages</h3>
+                <p>
+                    Be careful when a message pressures you to act immediately.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔑</div>
+                <h3>Password or OTP</h3>
+                <p>
+                    Never share passwords or verification codes unexpectedly.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="warning-box">
+
+            <h3>⚠️ Safety Tip</h3>
+
+            <p>
+                If a message asks for sensitive information,
+                verify the request using an official source.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MALWARE -->
+
+    <section id="malware" class="page">
+
+        <div class="page-header">
+
+            <div class="big-icon">🦠</div>
+
+            <h1>Malware Awareness</h1>
+
+            <p>
+                Learn about common types of malicious software.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🦠</div>
+                <h3>Virus</h3>
+                <p>
+                    Malicious software that can spread through files.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🐴</div>
+                <h3>Trojan</h3>
+                <p>
+                    Software that may appear legitimate but can perform
+                    harmful actions.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">👁️</div>
+                <h3>Spyware</h3>
+                <p>
+                    Software that can secretly collect information.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔒</div>
+                <h3>Ransomware</h3>
+                <p>
+                    Malware that can restrict access to files or systems.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="content-box">
+
+            <h2>🛡️ Prevention Tips</h2>
+
+            <ul>
+                <li>Keep your software updated.</li>
+                <li>Download software from trusted sources.</li>
+                <li>Avoid unknown attachments.</li>
+                <li>Keep important files backed up.</li>
+                <li>Use reputable security software.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <section id="quiz" class="page">
+
+        <div class="page-header">
+
+            <div class="big-icon">🧠</div>
+
+            <h1>Cyber Security Quiz</h1>
+
+            <p>Test your cybersecurity knowledge.</p>
+
+        </div>
+
+
+        <div class="quiz-box">
+
+            <div class="quiz-info">
+                <span id="questionNumber">
+                    Question 1 of 5
+                </span>
+
+                <span id="score">
+                    Score: 0
+                </span>
+            </div>
+
+
+            <h2 id="question"></h2>
+
+
+            <div id="answers"></div>
+
+
+            <button
+                class="main-btn"
+                onclick="nextQuestion()">
+                Next →
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <h3>🛡️ CyberSafe</h3>
+    <p>Stay Safe. Stay Smart. Think Before You Click.</p>
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
